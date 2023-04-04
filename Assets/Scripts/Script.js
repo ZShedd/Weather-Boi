@@ -28,7 +28,6 @@ recentSearch()
 
 function saveZipCode() {
     localStorage.setItem("mostRecent", zipCode)
-    // write code to display
     let zipListEl = document.querySelector('#zip-list');
     let newZip = document.createElement('li');
     newZip.innerHTML = zipCode;
@@ -44,13 +43,11 @@ function getLatAndLon() {
             let lat = data.city.coord.lat;
             let lon = data.city.coord.lon;
             let city = data.city.name.toUpperCase();
-            // setHero(data)
             getWeather(lat, lon, city);
     })
 }
 
 function setHero(city, data) {
-    // console.log(data);
     // clearing instructions if app has been used previously
     let instructions = document.querySelector('#instructions');
     instructions.innerHTML = '';
